@@ -33,7 +33,7 @@ func main() {
     }
     defer c.Close()
 
-    err = PublishJSON(ch, routing.ExchangePerilDirect, routing.PauseKey, routing.PlayingState{
+    err = pubsub.PublisJSON(c, routing.ExchangePerilDirect, routing.PauseKey, routing.PlayingState{
         IsPaused: true,
     })
 
